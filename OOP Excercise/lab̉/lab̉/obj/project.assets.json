@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\OOP Excercise\\lab̉\\lab̉\\lab6.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\oop-excercise\\OOP Excercise\\lab̉\\lab̉\\lab6.csproj",
       "projectName": "lab6",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\OOP Excercise\\lab̉\\lab̉\\lab6.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\oop-excercise\\OOP Excercise\\lab̉\\lab̉\\lab6.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\OOP Excercise\\lab̉\\lab̉\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\oop-excercise\\OOP Excercise\\lab̉\\lab̉\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
