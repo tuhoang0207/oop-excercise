@@ -7,9 +7,9 @@ using Services.interfaces;
 
 namespace Services.ImplementClass
 {
-    public class ClassServices : SuperClass<LopHoc>, IClass<LopHoc>, superInterfaces<LopHoc>
+    public class MarkServices : SuperClass<Diem>, superInterfaces<Diem>, IMark<Diem>
     {
-        public override void Create(LopHoc model)
+        public override void Create(Diem model)
         {
             throw new NotImplementedException();
         }
@@ -19,32 +19,32 @@ namespace Services.ImplementClass
             throw new NotImplementedException();
         }
 
-        public LopHoc GetByClassName(string className)
+        public Diem GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public LopHoc GetById(int id)
+        public List<Diem> getByIdSubject(int idSJ)
         {
             throw new NotImplementedException();
         }
 
-        public List<LopHoc> getByName(string name)
+        public List<Diem> getByIdSV(int idSV)
         {
             throw new NotImplementedException();
         }
 
-        public List<LopHoc> GetByTeacher(string teacherName)
+        public List<Diem> getByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public List<LopHoc> listAll()
+        public List<Diem> listAll()
         {
             throw new NotImplementedException();
         }
 
-        public override void Update(LopHoc model)
+        public override void Update(Diem model)
         {
             throw new NotImplementedException();
         }

@@ -7,11 +7,14 @@ using Services.interfaces;
 
 namespace Services.ImplementClass
 {
-    public class ClassServices : SuperClass<LopHoc>, IClass<LopHoc>, superInterfaces<LopHoc>
+    public class SubjectServices : SuperClass<MonHoc>, ISubject<MonHoc>, superInterfaces<MonHoc>
     {
-        public override void Create(LopHoc model)
+        public override void Create(MonHoc model)
         {
-            throw new NotImplementedException();
+            MonHoc m = new MonHoc();
+
+            System.Console.WriteLine("enter id mon hoc ");
+            m.id = Convert.ToInt32(Console.ReadLine());
         }
 
         public override void Delete(int id)
@@ -19,32 +22,37 @@ namespace Services.ImplementClass
             throw new NotImplementedException();
         }
 
-        public LopHoc GetByClassName(string className)
+        public MonHoc GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public LopHoc GetById(int id)
+        public MonHoc getByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public List<LopHoc> getByName(string name)
+        public List<MonHoc> getBySemester(string semester)
         {
             throw new NotImplementedException();
         }
 
-        public List<LopHoc> GetByTeacher(string teacherName)
+        public List<MonHoc> getByState(string state)
         {
             throw new NotImplementedException();
         }
 
-        public List<LopHoc> listAll()
+        public List<MonHoc> listAll()
         {
             throw new NotImplementedException();
         }
 
-        public override void Update(LopHoc model)
+        public override void Update(MonHoc model)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<MonHoc> superInterfaces<MonHoc>.getByName(string name)
         {
             throw new NotImplementedException();
         }

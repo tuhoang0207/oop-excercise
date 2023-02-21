@@ -7,9 +7,9 @@ using Services.interfaces;
 
 namespace Services.ImplementClass
 {
-    public class ClassServices : SuperClass<LopHoc>, IClass<LopHoc>, superInterfaces<LopHoc>
+    public class MentorServices : SuperClass<GiangVien>, superInterfaces<GiangVien>, IMentor<GiangVien>
     {
-        public override void Create(LopHoc model)
+        public override void Create(GiangVien model)
         {
             throw new NotImplementedException();
         }
@@ -19,32 +19,42 @@ namespace Services.ImplementClass
             throw new NotImplementedException();
         }
 
-        public LopHoc GetByClassName(string className)
+        public GiangVien getByEmail(string name)
         {
             throw new NotImplementedException();
         }
 
-        public LopHoc GetById(int id)
+        public GiangVien GetById(int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<LopHoc> getByName(string name)
+        public GiangVien getByMajors(string name)
         {
             throw new NotImplementedException();
         }
 
-        public List<LopHoc> GetByTeacher(string teacherName)
+        public List<GiangVien> getByName(string name)
         {
             throw new NotImplementedException();
         }
 
-        public List<LopHoc> listAll()
+        public GiangVien getByPhone(string name)
         {
             throw new NotImplementedException();
         }
 
-        public override void Update(LopHoc model)
+        public List<GiangVien> listAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Update(GiangVien model)
+        {
+            throw new NotImplementedException();
+        }
+
+        GiangVien IMentor<GiangVien>.getByName(string name)
         {
             throw new NotImplementedException();
         }
