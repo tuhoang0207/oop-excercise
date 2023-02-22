@@ -2,7 +2,7 @@
 using Services.ImplementClass;
 using StudentManage;
 
-SinhVien s = new SinhVien();
+
 sinhVienServices sv = new sinhVienServices();
 Menu m = new Menu();
 Display display = new Display();
@@ -23,14 +23,16 @@ do
             break;
         case 1:
             SinhVien result;
+            int tempId;
+            SinhVien s = new SinhVien();
             do
             {
                 System.Console.WriteLine("nhap vao id");
-                s.id = Convert.ToInt32(Console.ReadLine());
-                result = sv.GetById(s.id);
+                tempId = Convert.ToInt32(Console.ReadLine());
+                result = sv.GetById(tempId);
             } while (result != null);
 
-
+            s.id = tempId;
 
             System.Console.WriteLine("nhap vao ten");
             s.name = Convert.ToString(Console.ReadLine());
@@ -91,16 +93,29 @@ do
             display.display(result2);
             break;
         case 5:
+            Console.WriteLine("nhap ten can tim");
+            string name = Console.ReadLine();
+            var result3 = sv.getByName(name);
+            if (result3 == null)
+            {
+                System.Console.WriteLine("khong co");
+            }
+            else
+            {
+                display.display(result3);
+            }
             break;
         case 6:
-            break;
-        case 7:
             Console.WriteLine("nhap dia chi can tim");
             string address = Console.ReadLine();
             display.display(sv.listByAddress(address));
             break;
-        case 8:
+        case 7:
+            Console.WriteLine("nhap email can tim");
+            string email = Console.ReadLine();
+            display.display(sv.listByAddress(email));
             break;
+       
         default:
             break;
     }

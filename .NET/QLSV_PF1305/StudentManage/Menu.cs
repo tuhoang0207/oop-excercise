@@ -14,10 +14,9 @@ namespace StudentManage
             System.Console.WriteLine("2. Cap nhat");
             System.Console.WriteLine("3. Xoa");
             System.Console.WriteLine("4. Hien thi danh sach");
-            System.Console.WriteLine("5. Hien thi theo id");
-            System.Console.WriteLine("6. Hien thi theo ten");
-            System.Console.WriteLine("7. Hien thi theo dia chi");
-            System.Console.WriteLine("8. Hien thi theo email");
+            System.Console.WriteLine("5. Hien thi theo ten");
+            System.Console.WriteLine("6. Hien thi theo dia chi");
+            System.Console.WriteLine("7. Hien thi theo email");
             System.Console.WriteLine("==================================================");
 
         }

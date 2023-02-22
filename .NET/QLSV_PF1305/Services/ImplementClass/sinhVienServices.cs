@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Models;
 using Services.interfaces;
 
@@ -34,18 +35,22 @@ namespace Services.ImplementClass
 
         public List<SinhVien> GetByEmail(string email)
         {
-            throw new NotImplementedException();
+            return listSV.FindAll(x => x.email == email).ToList();
         }
 
         public SinhVien GetById(int model)
         {
+            foreach(var p in listSV)
+            {
+                Console.WriteLine(p.id);
+            }
             var result = listSV.Find(x => x.id == model);
             return result;
         }
 
         public List<SinhVien> getByName(string name)
         {
-            throw new NotImplementedException();
+            return listSV.FindAll(x => x.name == name).ToList();
         }
 
         public List<SinhVien> listAll()
