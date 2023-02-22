@@ -16,6 +16,6 @@ namespace Models
         public string majors { get; set; }
         public int salary { get; set; }
         public int bonus { get; set; }
-        public string state { get; set; }
+        public int state { get; set; }
     }
 }

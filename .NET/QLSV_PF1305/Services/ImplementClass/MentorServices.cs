@@ -14,12 +14,19 @@ namespace Services.ImplementClass
             throw new NotImplementedException();
         }
 
-        public override void Delete(int id)
+        public override int Delete(int id)
         {
             throw new NotImplementedException();
         }
 
         public GiangVien getByEmail(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+        public GiangVien GetById(GiangVien model)
         {
             throw new NotImplementedException();
         }

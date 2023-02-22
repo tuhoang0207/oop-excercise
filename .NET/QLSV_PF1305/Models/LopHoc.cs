@@ -10,6 +10,6 @@ namespace Models
         public int id { get; set; }
         public string className { get; set; }
         public string teacher { get; set; }
-        public string state { get; set; }
+        public int state { get; set; }
     }
 }

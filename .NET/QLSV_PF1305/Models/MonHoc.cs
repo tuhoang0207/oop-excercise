@@ -12,6 +12,6 @@ namespace Models
         public string semester { get; set; }
         public int officeHours { get; set; }
         public string describe { get; set; }
-        public string state { get; set; }
+        public int state { get; set; }
     }
 }

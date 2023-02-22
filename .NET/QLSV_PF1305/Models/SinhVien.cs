@@ -9,10 +9,10 @@ namespace Models
     {
         public int id { get; set; }
         public string name { get; set; }
-        public DateOnly birthday{ get; set; }
+        public DateTime birthday{ get; set; }
         public string address { get; set; }
         public string phoneNumber { get; set; }
         public string email { get; set; }
-        public string state { get; set; }
+        public int state { get; set; }
     }
 }

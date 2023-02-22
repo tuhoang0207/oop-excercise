@@ -14,7 +14,14 @@ namespace Services.ImplementClass
             throw new NotImplementedException();
         }
 
-        public override void Delete(int id)
+        public override int Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+      
+
+        public Diem GetById(Diem model)
         {
             throw new NotImplementedException();
         }

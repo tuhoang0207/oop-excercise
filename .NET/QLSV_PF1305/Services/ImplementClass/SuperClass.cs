@@ -9,6 +9,6 @@ namespace Services.ImplementClass
     {
         abstract public void Create(Models model);
         abstract public void Update(Models model);
-        abstract public void Delete(int id);
+        abstract public int Delete(int id);
     }
 }

@@ -17,7 +17,14 @@ namespace Services.ImplementClass
             m.id = Convert.ToInt32(Console.ReadLine());
         }
 
-        public override void Delete(int id)
+        public override int Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        
+
+        public MonHoc GetById(MonHoc model)
         {
             throw new NotImplementedException();
         }

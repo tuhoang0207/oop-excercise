@@ -14,6 +14,6 @@ namespace Models
         public DateOnly birthday { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public string state { get; set; }
+        public int state { get; set; }
     }
 }
