@@ -4,24 +4,32 @@ using StudentManage;
 
 
 sinhVienServices sv = new sinhVienServices();
-Menu m = new Menu();
+mainMenu m = new mainMenu();
+MenuQlsv menuQlsv = new MenuQlsv();
 Display display = new Display();
-m.MenuQLSV();
+m.menu();
 var chon = 0;
-
-
 
 do
 {
-    Console.WriteLine("nhap lua chon");
+    Console.WriteLine("Nhap lua chon cua ban");
     chon = Convert.ToInt32(Console.ReadLine());
+
     switch (chon)
     {
         case 0:
-            System.Console.WriteLine("ban da thoat khoi chuong trinh");
+            Console.WriteLine("ban da thoat chuong trinh");
             System.Environment.Exit(0);
             break;
         case 1:
+
+            do
+            {
+                menuQlsv.MenuQLSV();
+                chon = Convert.ToInt32(Console.ReadLine());
+                menuQlsv.choice(chon);
+            }while(chon != 0);
+
             SinhVien result;
             int tempId;
             SinhVien s = new SinhVien();
@@ -49,31 +57,20 @@ do
             System.Console.WriteLine("nhap vao phone");
             s.phoneNumber = Console.ReadLine();
             sv.Create(s);
+
             break;
         case 2:
-            System.Console.WriteLine("nhap vao id sinh vien can cap nhat");
-            int id = int.Parse(Console.ReadLine());
-            result = sv.GetById(id);
-
-            if (result != null)
+            MenuQlgv menuQlgv = new MenuQlgv();
+            do
             {
-                SinhVien sv2 = new SinhVien();
-
-                System.Console.WriteLine("nhap vao ten");
-                sv2.name = Convert.ToString(Console.ReadLine());
-
-                System.Console.WriteLine("nhap vao address");
-                sv2.address = Convert.ToString(Console.ReadLine());
-
-                System.Console.WriteLine("nhap vao email");
-                sv2.email = Convert.ToString(Console.ReadLine());
-
-                System.Console.WriteLine("nhap vao phone");
-                sv2.phoneNumber = Console.ReadLine();
-                sv.Update(sv2);
-            }
-
+                menuQlgv.menuQlgv();
+                chon = Convert.ToInt32((Console.ReadLine()));
+                menuQlgv.choice(chon);
+            }while(chon != 0);
             break;
+
+    }   
+
         case 3:
             System.Console.WriteLine("nhap vao id sinh vien can xoa");
             id = int.Parse(Console.ReadLine());
@@ -119,4 +116,5 @@ do
         default:
             break;
     }
+>>>>>>> dddeceb88f82fd2db10cb22004d0e8947d1f10b0
 } while (chon != null);

@@ -9,14 +9,21 @@ namespace Services.ImplementClass
 {
     public class MentorServices : SuperClass<GiangVien>, superInterfaces<GiangVien>, IMentor<GiangVien>
     {
+        List<GiangVien> listGV = new List<GiangVien>();
         public override void Create(GiangVien model)
         {
-            throw new NotImplementedException();
+            listGV.Add(model);
         }
 
         public override int Delete(int id)
         {
-            throw new NotImplementedException();
+            var result = this.GetById(id);
+            if (result != null)
+            {
+                listGV.Remove(result);
+                return 1;
+            }
+            return 0;
         }
 
         public GiangVien getByEmail(string name)
@@ -43,7 +50,7 @@ namespace Services.ImplementClass
 
         public List<GiangVien> getByName(string name)
         {
-            throw new NotImplementedException();
+            return listGV.FindAll(x => x.name == name).ToList();
         }
 
         public GiangVien getByPhone(string name)
