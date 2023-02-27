@@ -41,13 +41,7 @@ namespace Services.ImplementClass
 
         public SinhVien GetById(int model)
         {
-<<<<<<< HEAD
             foreach(var p in listSV)
-=======
-
-            foreach(var p in listSV)
-
->>>>>>> 516197a820526e210814175c4fb17c1691669dfb
             {
                 Console.WriteLine(p.id);
             }

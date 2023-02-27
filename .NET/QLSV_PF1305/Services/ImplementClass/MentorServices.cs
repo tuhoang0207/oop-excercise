@@ -53,11 +53,7 @@ namespace Services.ImplementClass
 
         public List<GiangVien> getByName(string name)
         {
-<<<<<<< HEAD
-            return listGV.Where(x => x.name == name).ToList();
-=======
             return listGV.FindAll(x => x.name == name).ToList();
->>>>>>> 516197a820526e210814175c4fb17c1691669dfb
         }
 
         public GiangVien getByPhone(string name)
