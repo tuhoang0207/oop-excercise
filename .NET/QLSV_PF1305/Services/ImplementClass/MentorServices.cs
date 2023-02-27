@@ -17,7 +17,13 @@ namespace Services.ImplementClass
 
         public override int Delete(int id)
         {
-            throw new NotImplementedException();
+            var result = this.GetById(id);
+            if (result != null)
+            {
+                listGV.Remove(result);
+                return 1;
+            }
+            return 0;
         }
 
         public GiangVien getByEmail(string name)
@@ -47,7 +53,11 @@ namespace Services.ImplementClass
 
         public List<GiangVien> getByName(string name)
         {
+<<<<<<< HEAD
             return listGV.Where(x => x.name == name).ToList();
+=======
+            return listGV.FindAll(x => x.name == name).ToList();
+>>>>>>> 516197a820526e210814175c4fb17c1691669dfb
         }
 
         public GiangVien getByPhone(string name)

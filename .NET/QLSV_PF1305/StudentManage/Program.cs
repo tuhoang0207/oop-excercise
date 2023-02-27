@@ -22,12 +22,21 @@ do
             System.Environment.Exit(0);
             break;
         case 1:
+<<<<<<< HEAD
+=======
+
+>>>>>>> 516197a820526e210814175c4fb17c1691669dfb
             do
             {
                 menuQlsv.MenuQLSV();
                 chon = Convert.ToInt32(Console.ReadLine());
                 menuQlsv.choice(chon);
+<<<<<<< HEAD
             } while (chon != 0);
+=======
+            }while(chon != 0);
+
+>>>>>>> 516197a820526e210814175c4fb17c1691669dfb
             SinhVien result;
             int tempId;
             SinhVien s = new SinhVien();
@@ -55,6 +64,10 @@ do
             System.Console.WriteLine("nhap vao phone");
             s.phoneNumber = Console.ReadLine();
             sv.Create(s);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 516197a820526e210814175c4fb17c1691669dfb
             break;
         case 2:
             MenuQlgv menuQlgv = new MenuQlgv();
@@ -66,6 +79,11 @@ do
             } while (chon != 0);
             break;
 
+<<<<<<< HEAD
+=======
+    }   
+
+>>>>>>> 516197a820526e210814175c4fb17c1691669dfb
         case 3:
             System.Console.WriteLine("nhap vao id sinh vien can xoa");
             int id = int.Parse(Console.ReadLine());

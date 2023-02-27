@@ -107,7 +107,7 @@ namespace StudentManage
                         break;
                     case 4:
                         var result2 = sv.listAll();
-                        display.display(result2);
+                        display.displaySV(result2);
                         break;
                     case 5:
                         Console.WriteLine("nhap ten can tim");
@@ -119,18 +119,18 @@ namespace StudentManage
                         }
                         else
                         {
-                            display.display(result3);
+                            display.displaySV(result3);
                         }
                         break;
                     case 6:
                         Console.WriteLine("nhap dia chi can tim");
                         string address = Console.ReadLine();
-                        display.display(sv.listByAddress(address));
+                        display.displaySV(sv.listByAddress(address));
                         break;
                     case 7:
                         Console.WriteLine("nhap email can tim");
                         string email = Console.ReadLine();
-                        display.display(sv.listByAddress(email));
+                        display.displaySV(sv.listByAddress(email));
                         break;
 
                     default:
