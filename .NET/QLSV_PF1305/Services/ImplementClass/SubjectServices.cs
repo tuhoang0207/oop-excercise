@@ -54,7 +54,9 @@ namespace Services.ImplementClass
             throw new NotImplementedException();
         }
 
-        public override void Update(MonHoc model)
+   
+
+        public override void Update(MonHoc model, MonHoc model2)
         {
             throw new NotImplementedException();
         }

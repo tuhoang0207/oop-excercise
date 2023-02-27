@@ -51,7 +51,9 @@ namespace Services.ImplementClass
             throw new NotImplementedException();
         }
 
-        public override void Update(Diem model)
+ 
+
+        public override void Update(Diem model, Diem model2)
         {
             throw new NotImplementedException();
         }

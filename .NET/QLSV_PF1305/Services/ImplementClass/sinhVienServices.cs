@@ -41,11 +41,7 @@ namespace Services.ImplementClass
 
         public SinhVien GetById(int model)
         {
-<<<<<<< HEAD
-            foreach (var p in listSV)
-=======
             foreach(var p in listSV)
->>>>>>> dddeceb88f82fd2db10cb22004d0e8947d1f10b0
             {
                 Console.WriteLine(p.id);
             }
@@ -63,10 +59,10 @@ namespace Services.ImplementClass
             return listSV.ToList();
         }
 
-        public override void Update(SinhVien model)
+        public override void Update(SinhVien model,SinhVien model2)
         {
             int index = listSV.IndexOf(model);
-            listSV[index] = model;
+            listSV[index] = model2;
         }
 
         public List<SinhVien> listByAddress(string address)

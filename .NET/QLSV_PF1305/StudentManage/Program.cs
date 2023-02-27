@@ -22,14 +22,12 @@ do
             System.Environment.Exit(0);
             break;
         case 1:
-<<<<<<< HEAD
             do
             {
                 menuQlsv.MenuQLSV();
                 chon = Convert.ToInt32(Console.ReadLine());
                 menuQlsv.choice(chon);
-            }while(chon != 0);
-=======
+            } while (chon != 0);
             SinhVien result;
             int tempId;
             SinhVien s = new SinhVien();
@@ -57,7 +55,6 @@ do
             System.Console.WriteLine("nhap vao phone");
             s.phoneNumber = Console.ReadLine();
             sv.Create(s);
->>>>>>> dddeceb88f82fd2db10cb22004d0e8947d1f10b0
             break;
         case 2:
             MenuQlgv menuQlgv = new MenuQlgv();
@@ -66,14 +63,12 @@ do
                 menuQlgv.menuQlgv();
                 chon = Convert.ToInt32((Console.ReadLine()));
                 menuQlgv.choice(chon);
-            }while(chon != 0);
+            } while (chon != 0);
             break;
-<<<<<<< HEAD
-    }   
-=======
+
         case 3:
             System.Console.WriteLine("nhap vao id sinh vien can xoa");
-            id = int.Parse(Console.ReadLine());
+            int id = int.Parse(Console.ReadLine());
             var result1 = sv.Delete(id);
             if (result1 == 1)
             {
@@ -112,9 +107,8 @@ do
             string email = Console.ReadLine();
             display.display(sv.listByAddress(email));
             break;
-       
+
         default:
             break;
     }
->>>>>>> dddeceb88f82fd2db10cb22004d0e8947d1f10b0
 } while (chon != null);

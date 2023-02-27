@@ -74,6 +74,7 @@ namespace StudentManage
                         if (result != null)
                         {
                             SinhVien sv2 = new SinhVien();
+                            sv2.id = id;
 
                             System.Console.WriteLine("nhap vao ten");
                             sv2.name = Convert.ToString(Console.ReadLine());
@@ -86,7 +87,7 @@ namespace StudentManage
 
                             System.Console.WriteLine("nhap vao phone");
                             sv2.phoneNumber = Console.ReadLine();
-                            sv.Update(sv2);
+                            sv.Update(result,sv2);
                         }
 
                         break;

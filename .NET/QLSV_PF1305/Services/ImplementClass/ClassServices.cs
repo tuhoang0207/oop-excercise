@@ -51,7 +51,9 @@ namespace Services.ImplementClass
             throw new NotImplementedException();
         }
 
-        public override void Update(LopHoc model)
+   
+
+        public override void Update(LopHoc model, LopHoc model2)
         {
             throw new NotImplementedException();
         }

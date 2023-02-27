@@ -9,9 +9,10 @@ namespace Services.ImplementClass
 {
     public class MentorServices : SuperClass<GiangVien>, superInterfaces<GiangVien>, IMentor<GiangVien>
     {
+        List<GiangVien> listGV = new List<GiangVien>();
         public override void Create(GiangVien model)
         {
-            throw new NotImplementedException();
+            listGV.Add(model);
         }
 
         public override int Delete(int id)
@@ -21,19 +22,22 @@ namespace Services.ImplementClass
 
         public GiangVien getByEmail(string name)
         {
-            throw new NotImplementedException();
+            var result = listGV.Find(x => x.email.Equals(name));
+            return result;
         }
 
         
 
-        public GiangVien GetById(GiangVien model)
-        {
-            throw new NotImplementedException();
-        }
+ 
 
         public GiangVien GetById(int id)
         {
-            throw new NotImplementedException();
+            foreach (var p in listGV)
+            {
+                Console.WriteLine(p.id);
+            }
+            var result = listGV.Find(x => x.id == id);
+            return result;
         }
 
         public GiangVien getByMajors(string name)
@@ -43,7 +47,7 @@ namespace Services.ImplementClass
 
         public List<GiangVien> getByName(string name)
         {
-            throw new NotImplementedException();
+            return listGV.Where(x => x.name == name).ToList();
         }
 
         public GiangVien getByPhone(string name)
@@ -53,13 +57,16 @@ namespace Services.ImplementClass
 
         public List<GiangVien> listAll()
         {
-            throw new NotImplementedException();
+            return listGV.ToList();
         }
 
-        public override void Update(GiangVien model)
+        public override void Update(GiangVien model,GiangVien model2)
         {
-            throw new NotImplementedException();
+            int index = listGV.IndexOf(model);
+            listGV[index] = model2;
         }
+
+      
 
         GiangVien IMentor<GiangVien>.getByName(string name)
         {
