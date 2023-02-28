@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace excercise3lab7
+namespace assignment
 {
-    internal class LibraryCard : ILibrary
+    internal class LibraryCard
     {
         public string cardId { get; set; }
         public string ownerName { get; set; }
@@ -54,7 +53,7 @@ namespace excercise3lab7
                 Console.WriteLine("card id " + lc.cardId);
                 Console.WriteLine("owner name " + lc.ownerName);
                 Console.WriteLine("cmnd id " + lc.cmndId);
-                Console.WriteLine("date created " + dateCreated);
+                Console.WriteLine("date created " + lc.dateCreated);
             }
         }
 
@@ -78,7 +77,7 @@ namespace excercise3lab7
                     Console.WriteLine("enter date created ");
                     lc.dateCreated = DateOnly.Parse(Console.ReadLine());
 
-                  
+
 
 
 

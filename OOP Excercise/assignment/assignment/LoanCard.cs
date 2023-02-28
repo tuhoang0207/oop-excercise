@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace excercise3lab7
+namespace assignment
 {
     internal class LoanCard : ILibrary
     {
@@ -14,8 +14,8 @@ namespace excercise3lab7
 
         public string loanCardId { get; set; }
         public string libraryCardId { get; set; }
-        public string bookName{ get; set; }
-        public string bookId{ get; set; }
+        public string bookName { get; set; }
+        public string bookId { get; set; }
         public DateOnly dateCreated { get; set; }
 
         public DateOnly giveBackDate { get; set; }
@@ -35,7 +35,7 @@ namespace excercise3lab7
         {
             LoanCard lc = new LoanCard();
 
-      
+
             Console.WriteLine("enter loan card id ");
             lc.loanCardId = Console.ReadLine();
 
@@ -59,14 +59,14 @@ namespace excercise3lab7
 
         public void show()
         {
-            foreach (var book in listLoanCard)
+            foreach (var loanCard in listLoanCard)
             {
-                Console.WriteLine("loan card id " + loanCardId);
-                Console.WriteLine("library card " + bookName);
-                Console.WriteLine("book name " + bookName);
-                Console.WriteLine("book id " + bookId);
-                Console.WriteLine("date created " + dateCreated);
-                Console.WriteLine("give back date " + giveBackDate);
+                Console.WriteLine("loan card id " + loanCard.loanCardId);
+                Console.WriteLine("library card " + loanCard.bookName);
+                Console.WriteLine("book name " + loanCard.bookName);
+                Console.WriteLine("book id " + loanCard.bookId);
+                Console.WriteLine("date created " + loanCard.dateCreated);
+                Console.WriteLine("give back date " + loanCard.giveBackDate);
             }
         }
 
@@ -89,7 +89,7 @@ namespace excercise3lab7
                     Console.WriteLine("enter give back date ");
                     lc.giveBackDate = DateOnly.Parse(Console.ReadLine());
 
-                    
+
 
                     Console.WriteLine("update successful");
                 }

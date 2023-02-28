@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace excercise3lab7
+namespace assignment
 {
-
     internal class Book : ILibrary
     {
         public string bookId { get; set; }
@@ -49,13 +51,13 @@ namespace excercise3lab7
 
         public void show()
         {
-            foreach(var book in listBooks)
+            foreach (var book in listBooks)
             {
-                Console.WriteLine("book id " + bookId);
-                Console.WriteLine("book name " + bookName);
-                Console.WriteLine("author name " + author);
-                Console.WriteLine("quantity " + quantity);
-                Console.WriteLine("genre " + genre);
+                Console.WriteLine("book id " + book.bookId);
+                Console.WriteLine("book name " + book.bookName);
+                Console.WriteLine("author name " + book.author);
+                Console.WriteLine("quantity " + book.quantity);
+                Console.WriteLine("genre " + book.genre);
             }
         }
 
@@ -135,8 +137,13 @@ namespace excercise3lab7
 
             foreach (var s in listBooks)
             {
-                tw.WriteLine(s);
+                tw.WriteLine("book id " + s.bookId);
+                tw.WriteLine("book name " + s.bookName);
+                tw.WriteLine("author " + s.author);
+                tw.WriteLine("quantity " + s.quantity);
+                tw.WriteLine("genre " + s.genre);
             }
+            Console.WriteLine("Write to file successfully");
             tw.Close();
         }
     }

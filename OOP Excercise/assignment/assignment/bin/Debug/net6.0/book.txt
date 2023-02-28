@@ -1,0 +1,5 @@
+book id 1
+book name toan
+author tu
+quantity 2
+genre sgk

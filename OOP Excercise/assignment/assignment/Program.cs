@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace excercise3lab7
+namespace assignment
 {
     internal class Program
     {
@@ -12,12 +12,13 @@ namespace excercise3lab7
         {
             Menu menu = new Menu();
             int choice;
-            Console.WriteLine("enter any choice ");
-            choice = Convert.ToInt32(Console.ReadLine());
+           
 
             do
             {
                 menu.menu();
+                Console.WriteLine("enter any choice ");
+                choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
                     case 0:
@@ -50,7 +51,11 @@ namespace excercise3lab7
                                 case 6:
                                     b.sort();
                                     break;
+                                case 7:
+                                    b.saveToFile();
+                                    break;
                             }
+                            break;
                         } while (choice != 0);
                         break;
                     case 2:
@@ -60,16 +65,16 @@ namespace excercise3lab7
                             menu.libraryCardMenu();
                             Console.WriteLine("enter any choice");
                             choice = Convert.ToInt32(Console.ReadLine());
-                            switch(choice)
+                            switch (choice)
                             {
                                 case 1:
                                     l.addNew();
                                     break;
                                 case 2:
-                                    l.show();
+                                    l.update();
                                     break;
                                 case 3:
-                                    l.update();
+                                    l.show();
                                     break;
                                 case 4:
                                     l.delete();
@@ -79,6 +84,9 @@ namespace excercise3lab7
                                     break;
                                 case 6:
                                     l.sort();
+                                    break;
+                                case 7:
+                                    l.saveToFile();
                                     break;
                             }
                         } while (choice != 0);
@@ -97,10 +105,10 @@ namespace excercise3lab7
                                     lc.addNew();
                                     break;
                                 case 2:
-                                    lc.show();
+                                    lc.update();
                                     break;
                                 case 3:
-                                    lc.update();
+                                    lc.show();
                                     break;
                                 case 4:
                                     lc.delete();
@@ -110,6 +118,9 @@ namespace excercise3lab7
                                     break;
                                 case 6:
                                     lc.sort();
+                                    break;
+                                case 7:
+                                    lc.saveToFile();
                                     break;
                             }
                         } while (choice != 0);
