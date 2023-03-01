@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace assignment
+namespace excercise3lab7
 {
-    internal interface ILibrary
+    public interface ILibrary
     {
         public void addNew();
         public void show();

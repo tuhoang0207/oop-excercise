@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace assignment
+namespace excercise3lab7
 {
-    internal class LibraryCard
+    internal class LibraryCard : ILibrary
     {
         public string cardId { get; set; }
         public string ownerName { get; set; }
@@ -53,7 +54,7 @@ namespace assignment
                 Console.WriteLine("card id " + lc.cardId);
                 Console.WriteLine("owner name " + lc.ownerName);
                 Console.WriteLine("cmnd id " + lc.cmndId);
-                Console.WriteLine("date created " + lc.dateCreated);
+                Console.WriteLine("date created " + dateCreated);
             }
         }
 
@@ -77,7 +78,7 @@ namespace assignment
                     Console.WriteLine("enter date created ");
                     lc.dateCreated = DateOnly.Parse(Console.ReadLine());
 
-
+                  
 
 
 
@@ -131,13 +132,7 @@ namespace assignment
 
         public void saveToFile()
         {
-            TextWriter tw = new StreamWriter("librarycard.txt");
-
-            foreach (var s in listLibraryCard)
-            {
-                tw.WriteLine(s);
-            }
-            tw.Close();
+            throw new NotImplementedException();
         }
     }
 }

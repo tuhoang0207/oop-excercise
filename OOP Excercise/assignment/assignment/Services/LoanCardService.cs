@@ -1,35 +1,16 @@
-﻿using System;
+﻿using assignment.Interfaces;
+using assignment.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace assignment
+namespace assignment.Services
 {
-    internal class LoanCard : ILibrary
+    internal class LoanCardService : LoanCard, ILibrary
     {
-        public LoanCard()
-        {
-        }
-
-        public string loanCardId { get; set; }
-        public string libraryCardId { get; set; }
-        public string bookName { get; set; }
-        public string bookId { get; set; }
-        public DateOnly dateCreated { get; set; }
-
-        public DateOnly giveBackDate { get; set; }
         static List<LoanCard> listLoanCard = new List<LoanCard>();
-
-        public LoanCard(string loanCardId, string libraryCardId, string bookName, string bookId, DateOnly dateCreated, DateOnly giveBackDate)
-        {
-            this.loanCardId = loanCardId;
-            this.libraryCardId = libraryCardId;
-            this.bookName = bookName;
-            this.bookId = bookId;
-            this.dateCreated = dateCreated;
-            this.giveBackDate = giveBackDate;
-        }
 
         public void addNew()
         {

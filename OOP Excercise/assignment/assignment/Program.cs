@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using assignment.Services;
 
 namespace assignment
 {
@@ -25,7 +26,7 @@ namespace assignment
                         System.Environment.Exit(0);
                         break;
                     case 1:
-                        Book b = new Book();
+                        BookService b = new BookService();
                         do
                         {
                             menu.bookMenu();
@@ -59,7 +60,7 @@ namespace assignment
                         } while (choice != 0);
                         break;
                     case 2:
-                        LibraryCard l = new LibraryCard();
+                        LibraryCardService l = new LibraryCardService();
                         do
                         {
                             menu.libraryCardMenu();
@@ -93,7 +94,7 @@ namespace assignment
                         break;
                     case 3:
 
-                        LoanCard lc = new LoanCard();
+                        BookService lc = new BookService();
                         do
                         {
                             menu.loanCardMenu();
