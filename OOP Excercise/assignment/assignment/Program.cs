@@ -94,7 +94,7 @@ namespace assignment
                         break;
                     case 3:
 
-                        BookService lc = new BookService();
+                        LoanCardService lc = new LoanCardService();
                         do
                         {
                             menu.loanCardMenu();
