@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TU3pR0ri8x4jUJutXCnJPV1EdM7yWIZcB9e449/tUv/p02f0eLeg1eAR/7SFxZWy72XuIfNfH9YV7SxWDii/jQ==",
+  "dgSpecHash": "+4b0T9+agxqpUbL062HhNAYbQ6zr/rqffFWL5aHI0OOuj5+OWgia+IbsxXUF7tQ8XAkOC2LuwPK+/LiB5I5MAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Desktop\\oop-excercise\\OOP Excercise\\assignment\\assignment\\assignment.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.14\\microsoft.netcore.app.host.win-x64.6.0.14.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

@@ -12,7 +12,7 @@ namespace assignment.Models
         {
         }
 
-        public string loanCardId { get; set; }
+        public int loanCardId { get; set; }
         public string libraryCardId { get; set; }
         public string bookName { get; set; }
         public string bookId { get; set; }
@@ -21,7 +21,7 @@ namespace assignment.Models
         public DateOnly giveBackDate { get; set; }
         
 
-        public LoanCard(string loanCardId, string libraryCardId, string bookName, string bookId, DateOnly dateCreated, DateOnly giveBackDate)
+        public LoanCard(int loanCardId, string libraryCardId, string bookName, string bookId, DateOnly dateCreated, DateOnly giveBackDate)
         {
             this.loanCardId = loanCardId;
             this.libraryCardId = libraryCardId;

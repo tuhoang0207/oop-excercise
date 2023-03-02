@@ -8,12 +8,12 @@ namespace assignment.Models
 {
     internal class LibraryCard
     {
-        public string cardId { get; set; }
+        public int cardId { get; set; }
         public string ownerName { get; set; }
         public string cmndId { get; set; }
         public DateOnly dateCreated { get; set; }
 
-        public LibraryCard(string cardId, string ownerName, string cmndId, DateOnly dateCreated)
+        public LibraryCard(int cardId, string ownerName, string cmndId, DateOnly dateCreated)
         {
             this.cardId = cardId;
             this.ownerName = ownerName;

@@ -11,12 +11,13 @@ namespace assignment.Services
     internal class BookService : Book, ILibrary
     {
         static List<Book> listBooks = new List<Book>();
+        
         public void addNew()
         {
             Book b = new Book();
+            int id = listBooks.Count() + 1;
 
-            Console.WriteLine("enter book id ");
-            b.bookId = Convert.ToInt32(Console.ReadLine());
+            b.bookId = id;
 
             Console.WriteLine("enter book name ");
             b.bookName = Console.ReadLine();
@@ -31,6 +32,7 @@ namespace assignment.Services
             b.genre = Console.ReadLine();
 
             listBooks.Add(b);
+
         }
 
         public void show()
@@ -42,6 +44,7 @@ namespace assignment.Services
                 Console.WriteLine("author name " + book.author);
                 Console.WriteLine("quantity " + book.quantity);
                 Console.WriteLine("genre " + book.genre);
+                Console.WriteLine("==============================");
             }
         }
 
@@ -77,7 +80,7 @@ namespace assignment.Services
             string name;
             Console.WriteLine("enter book name you want to delete ");
             name = Console.ReadLine();
-            foreach (Book b in listBooks)
+            foreach (Book b in listBooks.ToList())
             {
                 if (b.bookName.Equals(name))
                 {
@@ -107,15 +110,62 @@ namespace assignment.Services
                 {
                     Console.WriteLine("Found the book you want to search ");
                     Console.WriteLine(b.bookName + " of " + b.author);
+                    break;
                 }
                 else
                 {
                     Console.WriteLine("The book you want to search is not found ");
+                    break;
                 }
             }
         }
 
 
+        public void analyze()
+        {
+            //string tempGenre = listBooks[0].genre.ToString();
+            int count = 0;
+            //int tempCount = 1;
+            string tempGenre;
+            //foreach(Book b in listBooks)
+            //{
+            //    if(b.genre.Equals(tempGenre))
+            //    {
+            //        count++;
+            //    }
+            //}
+            List<String> tempList = new List<String>();
+            var result = from book in listBooks
+                         group book.bookName by book.genre;
+            result.ToList().ForEach(x =>
+            {
+                Console.WriteLine($"genre {x.Key}");
+                x.ToList().ForEach(y =>
+                {
+                    Console.WriteLine("book name " + y);
+                });
+            });
+            //for (int i = 0;i < listBooks.Count; i++) {
+            //    tempGenre = listBooks[i].genre.ToString();
+            //    for (int j = 0; j < listBooks.Count;j++)
+            //    {
+                  
+            //        if (listBooks[j].genre.Equals(tempGenre))
+            //        {
+            //                tempList.Add(listBooks[j].genre);
+            //                count++;
+            //        }
+            //        else
+            //        {
+            //            //tempCount++;
+            //        }
+                    
+            //    }
+            //    Console.WriteLine("There are " + count + " of " + tempGenre);
+            //    count = 0;
+            //}
+            
+        }
 
         public void saveToFile()
         {

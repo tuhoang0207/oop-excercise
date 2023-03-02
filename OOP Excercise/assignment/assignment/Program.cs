@@ -51,9 +51,13 @@ namespace assignment
                                     break;
                                 case 6:
                                     b.sort();
+                                    b.show();
                                     break;
                                 case 7:
                                     b.saveToFile();
+                                    break;
+                                case 8:
+                                    b.analyze();
                                     break;
                             }
                             break;
@@ -85,6 +89,7 @@ namespace assignment
                                     break;
                                 case 6:
                                     l.sort();
+                                    l.show();
                                     break;
                                 case 7:
                                     l.saveToFile();
@@ -119,6 +124,7 @@ namespace assignment
                                     break;
                                 case 6:
                                     lc.sort();
+                                    lc.show();
                                     break;
                                 case 7:
                                     lc.saveToFile();

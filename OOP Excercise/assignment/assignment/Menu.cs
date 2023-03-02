@@ -28,6 +28,7 @@ namespace assignment
             Console.WriteLine("5. Search a book");
             Console.WriteLine("6. Sort a book");
             Console.WriteLine("7. Save to file");
+            Console.WriteLine("8. Analyze");
         }
 
         public void libraryCardMenu()

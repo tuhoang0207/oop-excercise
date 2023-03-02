@@ -11,14 +11,13 @@ namespace assignment.Services
     internal class LibraryCardService : LibraryCard, ILibrary
     {
         static List<LibraryCard> listLibraryCard = new List<LibraryCard>();
-
+        int id = 1;
         public void addNew()
         {
             LibraryCard lc = new LibraryCard();
 
-
-            Console.WriteLine("enter card id ");
-            lc.cardId = Console.ReadLine();
+            
+            lc.cardId = id;
 
             Console.WriteLine("enter owner name  ");
             lc.ownerName = Console.ReadLine();
@@ -40,6 +39,7 @@ namespace assignment.Services
                 Console.WriteLine("owner name " + lc.ownerName);
                 Console.WriteLine("cmnd id " + lc.cmndId);
                 Console.WriteLine("date created " + lc.dateCreated);
+                Console.WriteLine("===============================");
             }
         }
 
@@ -77,7 +77,7 @@ namespace assignment.Services
             string name;
             Console.WriteLine("enter owner name you want to delete ");
             name = Console.ReadLine();
-            foreach (var lc in listLibraryCard)
+            foreach (var lc in listLibraryCard.ToList())
             {
                 if (lc.ownerName.Equals(name))
                 {
@@ -112,9 +112,22 @@ namespace assignment.Services
 
         public void sort()
         { //by card id 
-            listLibraryCard.Sort((x, y) => string.Compare(x.cardId, y.cardId));
+            listLibraryCard.Sort((x, y) => String.Compare(x.ownerName, y.ownerName));
         }
 
+        public void analyze()
+        {
+            //string tempGenre = listBooks[0].genre.ToString();
+            //int count = 0;
+            //foreach (Book b in listBooks)
+            //{
+            //    if (b.genre.Equals(tempGenre))
+            //    {
+            //        count++;
+            //    }
+            //}
+            //Console.WriteLine("There are " + count + " of " + tempGenre);
+        }
         public void saveToFile()
         {
             TextWriter tw = new StreamWriter("librarycard.txt");
