@@ -11,10 +11,13 @@ namespace assignment.Services
     internal class LoanCardService : LoanCard, ILibrary
     {
         static List<LoanCard> listLoanCard = new List<LoanCard>();
+        BookService book = new BookService();
 
         public void addNew()
         {
+            List<int> tempList = new List<int>();
             LoanCard lc = new LoanCard();
+
 
 
             Console.WriteLine("enter loan card id ");
@@ -23,17 +26,36 @@ namespace assignment.Services
             Console.WriteLine("enter library card id  ");
             lc.libraryCardId = Console.ReadLine();
 
-            Console.WriteLine("enter book name ");
-            lc.bookName = Console.ReadLine();
+            //result = from b in book.listBooks
+            //         where b.bookName == book.bookName
+            //         select b.ToString();
 
             Console.WriteLine("enter book id ");
-            lc.bookId = Console.ReadLine();
+            lc.bookId = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("enter loan date  ");
-            lc.dateCreated = DateOnly.Parse(Console.ReadLine());
+            var result = book.getBooks();
+            if (result != null)
+            {
+                foreach (var item in result.ToList())
+                {
+                    tempList.Add(item.bookId);
+                    if (item.bookId == lc.bookId)
+                    {
+                        lc.bookName = item.bookName;
+                    }
+                }
+            }
 
-            Console.WriteLine("enter give back date ");
-            lc.giveBackDate = DateOnly.Parse(Console.ReadLine());
+            
+
+            lc.dateCreated = DateOnly.FromDateTime(DateTime.Now);
+
+
+            do
+            {
+                Console.WriteLine("enter give back date ");
+                lc.giveBackDate = DateOnly.Parse(Console.ReadLine());
+            } while (lc.giveBackDate < lc.dateCreated);
 
             listLoanCard.Add(lc);
         }

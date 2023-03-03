@@ -36,24 +36,31 @@ namespace assignment
                             {
                                 case 1:
                                     b.addNew();
+                                    b.show();
                                     break;
                                 case 2:
                                     b.show();
                                     break;
                                 case 3:
                                     b.update();
+                                    b.show();
                                     break;
                                 case 4:
                                     b.delete();
+                                    b.show();
                                     break;
                                 case 5:
                                     b.search();
                                     break;
                                 case 6:
                                     b.sort();
+                                    b.show();
                                     break;
                                 case 7:
                                     b.saveToFile();
+                                    break;
+                                case 8:
+                                    b.analyze();
                                     break;
                             }
                             break;
@@ -90,6 +97,7 @@ namespace assignment
                                     l.saveToFile();
                                     break;
                             }
+                            break;
                         } while (choice != 0);
                         break;
                     case 3:
@@ -124,6 +132,7 @@ namespace assignment
                                     lc.saveToFile();
                                     break;
                             }
+                            break;
                         } while (choice != 0);
                         break;
                     default:
