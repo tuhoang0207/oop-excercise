@@ -16,6 +16,7 @@ namespace assignment.Interfaces
 
         public void sort();
         public void search();
+        public void analyze();
         public void saveToFile();
     }
 }

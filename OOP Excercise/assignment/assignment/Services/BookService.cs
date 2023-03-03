@@ -10,8 +10,13 @@ namespace assignment.Services
 {
     internal class BookService : Book, ILibrary
     {
+<<<<<<< HEAD
         public static List<Book> listBooks = new List<Book>();
 
+=======
+        static List<Book> listBooks = new List<Book>();
+        
+>>>>>>> 0386a4780afe90b3cfade59556c043474b3336a9
         public void addNew()
         {
             Book b = new Book();
@@ -138,21 +143,33 @@ namespace assignment.Services
             var result = from book in listBooks
                          group book.bookName by book.genre;
             result.ToList().ForEach(x =>
+<<<<<<< HEAD
             { // lặp danh sách genre
+=======
+            {
+>>>>>>> 0386a4780afe90b3cfade59556c043474b3336a9
                 Console.WriteLine($"genre {x.Key}");
                 x.ToList().ForEach(y =>
                 {
                     Console.WriteLine("book name " + y);
+<<<<<<< HEAD
                     //count++;
                 });
                 Console.WriteLine("there are " + x.Count() + " of " + x.Key);
                 //count = 0;
+=======
+                });
+>>>>>>> 0386a4780afe90b3cfade59556c043474b3336a9
             });
             //for (int i = 0;i < listBooks.Count; i++) {
             //    tempGenre = listBooks[i].genre.ToString();
             //    for (int j = 0; j < listBooks.Count;j++)
             //    {
+<<<<<<< HEAD
 
+=======
+                  
+>>>>>>> 0386a4780afe90b3cfade59556c043474b3336a9
             //        if (listBooks[j].genre.Equals(tempGenre))
             //        {
             //                tempList.Add(listBooks[j].genre);
@@ -162,12 +179,20 @@ namespace assignment.Services
             //        {
             //            //tempCount++;
             //        }
+<<<<<<< HEAD
 
+=======
+                    
+>>>>>>> 0386a4780afe90b3cfade59556c043474b3336a9
             //    }
             //    Console.WriteLine("There are " + count + " of " + tempGenre);
             //    count = 0;
             //}
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 0386a4780afe90b3cfade59556c043474b3336a9
         }
 
         public void saveToFile()

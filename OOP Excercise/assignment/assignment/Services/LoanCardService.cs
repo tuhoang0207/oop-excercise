@@ -13,15 +13,13 @@ namespace assignment.Services
         static List<LoanCard> listLoanCard = new List<LoanCard>();
         BookService book = new BookService();
 
+        int id = 1;
         public void addNew()
         {
             List<int> tempList = new List<int>();
             LoanCard lc = new LoanCard();
-
-
-
-            Console.WriteLine("enter loan card id ");
-            lc.loanCardId = Console.ReadLine();
+            
+            lc.loanCardId = id;
 
             Console.WriteLine("enter library card id  ");
             lc.libraryCardId = Console.ReadLine();
@@ -58,6 +56,7 @@ namespace assignment.Services
             } while (lc.giveBackDate < lc.dateCreated);
 
             listLoanCard.Add(lc);
+            id++;
         }
 
         public void show()
@@ -70,6 +69,7 @@ namespace assignment.Services
                 Console.WriteLine("book id " + loanCard.bookId);
                 Console.WriteLine("date created " + loanCard.dateCreated);
                 Console.WriteLine("give back date " + loanCard.giveBackDate);
+                Console.WriteLine("========================================");
             }
         }
 
@@ -104,7 +104,7 @@ namespace assignment.Services
             string name;
             Console.WriteLine("enter book name you want to delete ");
             name = Console.ReadLine();
-            foreach (var lc in listLoanCard)
+            foreach (var lc in listLoanCard.ToList())
             {
                 if (lc.bookName.Equals(name))
                 {
@@ -142,6 +142,19 @@ namespace assignment.Services
             }
         }
 
+        public void analyze()
+        {
+            //string tempGenre = listBooks[0].genre.ToString();
+            //int count = 0;
+            //foreach (Book b in listBooks)
+            //{
+            //    if (b.genre.Equals(tempGenre))
+            //    {
+            //        count++;
+            //    }
+            //}
+            //Console.WriteLine("There are " + count + " of " + tempGenre);
+        }
         public void saveToFile()
         {
             TextWriter tw = new StreamWriter("loancard.txt");
