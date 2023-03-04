@@ -10,7 +10,7 @@ namespace assignment.Services
 {
     internal class LibraryCardService : LibraryCard, ILibrary
     {
-        static List<LibraryCard> listLibraryCard = new List<LibraryCard>();
+        public static List<LibraryCard> listLibraryCard = new List<LibraryCard>();
         int id = 1;
         public void addNew()
         {
@@ -137,6 +137,11 @@ namespace assignment.Services
                 tw.WriteLine(s);
             }
             tw.Close();
+        }
+
+        public List<LibraryCard> getLibraryCard()
+        {
+            return listLibraryCard;
         }
     }
 }

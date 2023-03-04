@@ -11,41 +11,69 @@ namespace assignment.Services
     internal class LoanCardService : LoanCard, ILibrary
     {
         static List<LoanCard> listLoanCard = new List<LoanCard>();
+        BookService book = new BookService();
+        LibraryCardService libraryCard = new LibraryCardService();
         int id = 1;
         public void addNew()
         {
+            List<int> tempList = new List<int>();
             LoanCard lc = new LoanCard();
-
-
             
             lc.loanCardId = id;
 
             Console.WriteLine("enter library card id  ");
-            lc.libraryCardId = Console.ReadLine();
-
-            Console.WriteLine("enter book name ");
-            lc.bookName = Console.ReadLine();
+            lc.libraryCardId = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("enter book id ");
-            lc.bookId = Console.ReadLine();
+            lc.bookId = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("enter loan date  ");
-            lc.dateCreated = DateOnly.Parse(Console.ReadLine());
+            var result = book.getBooks();
+            if (result != null)
+            {
+                foreach (var item in result.ToList())
+                {
+                    tempList.Add(item.bookId);
+                    if (item.bookId == lc.bookId)
+                    {
+                        lc.bookName = item.bookName;
+                    }
+                }
+            }
 
-            Console.WriteLine("enter give back date ");
-            lc.giveBackDate = DateOnly.Parse(Console.ReadLine());
+            
+
+            lc.dateCreated = DateOnly.FromDateTime(DateTime.Now);
+
+
+            do
+            {
+                Console.WriteLine("enter give back date ");
+                lc.giveBackDate = DateOnly.Parse(Console.ReadLine());
+            } while (lc.giveBackDate < lc.dateCreated);
 
             listLoanCard.Add(lc);
+            id++;
         }
 
         public void show()
         {
+            var result = libraryCard.getLibraryCard();
+            
             foreach (var loanCard in listLoanCard)
             {
+                
                 Console.WriteLine("loan card id " + loanCard.loanCardId);
-                Console.WriteLine("library card " + loanCard.bookName);
+                if (result != null)
+                {
+                    foreach (var item in result.ToList())
+                    {
+                        if (item.cardId == loanCard.libraryCardId)
+                        {
+                            Console.WriteLine("owner name " + item.ownerName);
+                        }
+                    }
+                }
                 Console.WriteLine("book name " + loanCard.bookName);
-                Console.WriteLine("book id " + loanCard.bookId);
                 Console.WriteLine("date created " + loanCard.dateCreated);
                 Console.WriteLine("give back date " + loanCard.giveBackDate);
                 Console.WriteLine("========================================");
@@ -55,15 +83,13 @@ namespace assignment.Services
         public void update()
         {
             string name;
-            Console.WriteLine("enter book name you want to update ");
+            Console.WriteLine("enter loan card name you want to update ");
             name = Console.ReadLine();
 
             foreach (var lc in listLoanCard)
             {
                 if (lc.bookName.Equals(name))
                 {
-                    Console.WriteLine("enter book name ");
-                    lc.bookName = Console.ReadLine();
 
                     Console.WriteLine("enter date created ");
                     lc.dateCreated = DateOnly.Parse(Console.ReadLine());

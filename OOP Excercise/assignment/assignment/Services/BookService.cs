@@ -10,8 +10,8 @@ namespace assignment.Services
 {
     internal class BookService : Book, ILibrary
     {
-        static List<Book> listBooks = new List<Book>();
-        
+        public static List<Book> listBooks = new List<Book>();
+
         public void addNew()
         {
             Book b = new Book();
@@ -123,48 +123,43 @@ namespace assignment.Services
 
         public void analyze()
         {
-            //string tempGenre = listBooks[0].genre.ToString();
             int count = 0;
             //int tempCount = 1;
             string tempGenre;
-            //foreach(Book b in listBooks)
-            //{
-            //    if(b.genre.Equals(tempGenre))
-            //    {
-            //        count++;
-            //    }
-            //}
+       
             List<String> tempList = new List<String>();
             var result = from book in listBooks
-                         group book.bookName by book.genre;
+                         group book.bookName by book.genre; //Key
+
+            Console.WriteLine("Count total book by genre");
             result.ToList().ForEach(x =>
+            { // lặp danh sách genre
+                Console.WriteLine("genre " + x.Key);
+                x.ToList().ForEach(y =>
+                { //in những sách có genre là x
+                    Console.WriteLine("book name " + y);
+                    //count++;
+                });
+                Console.WriteLine("there are " + x.Count() + " of " + x.Key);
+                //count = 0;
+                });
+
+            int total = 0;
+            var getBookQuantity = from book in listBooks
+                                  group book.quantity by book.genre;
+            Console.WriteLine("================================");
+            Console.WriteLine("Count total quantity book by genre");
+            getBookQuantity.ToList().ForEach(x =>
             {
-                Console.WriteLine($"genre {x.Key}");
+                Console.WriteLine("genre " + x.Key);
                 x.ToList().ForEach(y =>
                 {
-                    Console.WriteLine("book name " + y);
+                    total += y;
                 });
+                Console.WriteLine("there are " + total + " " + x.Key);
+                Console.WriteLine("=============================");
+                total = 0;
             });
-            //for (int i = 0;i < listBooks.Count; i++) {
-            //    tempGenre = listBooks[i].genre.ToString();
-            //    for (int j = 0; j < listBooks.Count;j++)
-            //    {
-                  
-            //        if (listBooks[j].genre.Equals(tempGenre))
-            //        {
-            //                tempList.Add(listBooks[j].genre);
-            //                count++;
-            //        }
-            //        else
-            //        {
-            //            //tempCount++;
-            //        }
-                    
-            //    }
-            //    Console.WriteLine("There are " + count + " of " + tempGenre);
-            //    count = 0;
-            //}
-            
         }
 
         public void saveToFile()
@@ -181,6 +176,11 @@ namespace assignment.Services
             }
             Console.WriteLine("Write to file successfully");
             tw.Close();
+        }
+
+        public List<Book> getBooks()
+        {
+            return listBooks;
         }
     }
 }

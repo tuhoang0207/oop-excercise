@@ -13,15 +13,14 @@ namespace assignment.Models
         }
 
         public int loanCardId { get; set; }
-        public string libraryCardId { get; set; }
+        public int libraryCardId { get; set; }
         public string bookName { get; set; }
-        public string bookId { get; set; }
+        public int bookId { get; set; }
         public DateOnly dateCreated { get; set; }
 
         public DateOnly giveBackDate { get; set; }
         
-
-        public LoanCard(int loanCardId, string libraryCardId, string bookName, string bookId, DateOnly dateCreated, DateOnly giveBackDate)
+        public LoanCard(int loanCardId, int libraryCardId, string bookName, int bookId, DateOnly dateCreated, DateOnly giveBackDate)
         {
             this.loanCardId = loanCardId;
             this.libraryCardId = libraryCardId;

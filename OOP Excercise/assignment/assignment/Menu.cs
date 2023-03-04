@@ -46,8 +46,8 @@ namespace assignment
         public void loanCardMenu()
         {
             Console.WriteLine("Loan Card manage");
-            Console.WriteLine("1.Add a new card");
-            Console.WriteLine("2.Show full list");
+            Console.WriteLine("1. Add a new card");
+            Console.WriteLine("2. Show full list");
             Console.WriteLine("4. Delete a card");
             Console.WriteLine("5. Search a card");
             Console.WriteLine("6. Sort a card");

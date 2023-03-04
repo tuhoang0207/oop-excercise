@@ -1,5 +1,27 @@
+book id 4
+book name conan
+author g
+quantity 3
+genre manga
+book id 3
+book name shin
+author j
+quantity 4
+genre manga
 book id 1
+<<<<<<< HEAD
+book name toan
+author t
+quantity 3
+genre sgk
+book id 2
+book name van
+author t
+quantity 3
+genre sgk
+=======
 book name toán
 author lâm
 quantity 3
 genre sách giáo khoa
+>>>>>>> 0386a4780afe90b3cfade59556c043474b3336a9
