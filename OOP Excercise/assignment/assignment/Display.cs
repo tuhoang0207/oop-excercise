@@ -12,11 +12,14 @@ namespace assignment
         public static void displayBook(List<BookService> books) {
             foreach (BookService book in books)
             {
-                Console.WriteLine("book id " + book.bookId);
-                Console.WriteLine("book name " + book.bookName);
-                Console.WriteLine("book title " + book.genre);
-                Console.WriteLine("book quantity " + book.quantity);
-                Console.WriteLine("book author " + book.author);
+                //Console.WriteLine("book id " + book.bookId);
+                //Console.WriteLine("book name " + book.bookName);
+                //Console.WriteLine("book title " + book.genre);
+                //Console.WriteLine("book quantity " + book.quantity);
+                //Console.WriteLine("book author " + book.author);
+                Console.WriteLine("|--- |-- |---------------|");
+                Console.WriteLine("|ID |Name | title | quantity | author");
+                Console.WriteLine("|------------------------|");
             }
         }
 

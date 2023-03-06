@@ -58,7 +58,7 @@ namespace assignment.Services
         public void show()
         {
             var result = libraryCard.getLibraryCard();
-            
+       
             foreach (var loanCard in listLoanCard)
             {
                 
@@ -77,6 +77,11 @@ namespace assignment.Services
                 Console.WriteLine("date created " + loanCard.dateCreated);
                 Console.WriteLine("give back date " + loanCard.giveBackDate);
                 Console.WriteLine("========================================");
+
+                //Console.WriteLine("|--- |-- |---------------|");
+                //Console.WriteLine("|ID | book name| date created| give back date");
+                //Console.WriteLine("|------------------------|");
+                //Console.WriteLine(loanCard.loanCardId + loanCard.bookName + loanCard.dateCreated + loanCard.giveBackDate);
             }
         }
 

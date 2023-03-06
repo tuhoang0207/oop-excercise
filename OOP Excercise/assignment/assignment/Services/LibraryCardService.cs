@@ -35,11 +35,16 @@ namespace assignment.Services
         {
             foreach (var lc in listLibraryCard)
             {
-                Console.WriteLine("card id " + lc.cardId);
-                Console.WriteLine("owner name " + lc.ownerName);
-                Console.WriteLine("cmnd id " + lc.cmndId);
-                Console.WriteLine("date created " + lc.dateCreated);
-                Console.WriteLine("===============================");
+                //Console.WriteLine("card id " + lc.cardId);
+                //Console.WriteLine("owner name " + lc.ownerName);
+                //Console.WriteLine("cmnd id " + lc.cmndId);
+                //Console.WriteLine("date created " + lc.dateCreated);
+                //Console.WriteLine("===============================");
+
+                Console.WriteLine("|--- |-- |---------------|");
+                Console.WriteLine("|ID |Name | cmnd id | date created");
+                Console.WriteLine("|------------------------|");
+                Console.WriteLine(lc.cardId + lc.ownerName + lc.cmndId + lc.dateCreated);
             }
         }
 

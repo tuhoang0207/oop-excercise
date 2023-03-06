@@ -39,12 +39,10 @@ namespace assignment.Services
         {
             foreach (var book in listBooks)
             {
-                Console.WriteLine("book id " + book.bookId);
-                Console.WriteLine("book name " + book.bookName);
-                Console.WriteLine("author name " + book.author);
-                Console.WriteLine("quantity " + book.quantity);
-                Console.WriteLine("genre " + book.genre);
-                Console.WriteLine("==============================");
+                Console.WriteLine("|--- |-- |---------------|");
+                Console.WriteLine("|ID |Name | title | quantity | author");
+                Console.WriteLine("|------------------------|");
+                Console.WriteLine(book.bookId + book.bookName + book.genre + book.quantity + book.author);
             }
         }
 
